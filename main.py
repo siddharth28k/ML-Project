@@ -4,6 +4,35 @@ import uvicorn
 import argparse
 
 app = FastAPI()
+# adding the meta data for the different pipelines
+METADATA = {
+    "text-classification": {
+        "inputs": [
+            {"name": "args", "datatype": "str"}
+        ],
+        "outputs": []
+    },
+    "token-classification": {
+        "inputs": [
+            {"name": "args", "datatype": "str"}
+        ],
+        "outputs": []
+    },
+    "object-detection": {
+        "inputs": [
+            {"name": "inputs", "datatype": "str"},
+            {"name": "inputs", "datatype": "base64"},
+            {"name": "inputs", "datatype": "pillow_image"}
+        ],
+        "outputs": []
+    },
+    "text-generation": {
+        "inputs": [
+            {"name": "args", "datatype": "str"}
+        ],
+        "outputs": []
+    }
+}
 
 def convert_to_v2_payload(pipeline_name: str, payload: dict):
     # Implement the conversion logic for each pipeline
