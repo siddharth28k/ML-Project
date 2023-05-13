@@ -1,5 +1,5 @@
 # ML-Project
-Creating a service on FastAPI for ML models using the HuggingFace transformers library and converting it into V2 inference protocol. 
+Creating a service on FastAPI for ML models using the HuggingFace transformers library and converting the output payload into V2 inference protocol. Input taken is in the format of HuggingFace and the output is in V2 inference protocol(somewhat).
 
 First I import the specific data formats as metadata for the desired pipelines so that it can be used dynamically.
 Then I have created a function to converts input data into v2_payload using the above mentioned metadata. It returns the converted payload.
